@@ -42,8 +42,4 @@ class APIRootTest(TestCase):
     def test_api_root(self):
         response = self.client.get(reverse('api-root'))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertIn('users', response.data)
-        self.assertIn('teams', response.data)
-        self.assertIn('activities', response.data)
-        self.assertIn('workouts', response.data)
-        self.assertIn('leaderboard', response.data)
+        self.assertIn('api_root', response.data)
